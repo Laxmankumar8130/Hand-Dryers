@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Localhost Live Tunnel Guide & Interactive Port Customizer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(17, 24, 39, 0.78);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover: rgba(99, 102, 241, 0.25);
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-glow: rgba(99, 102, 241, 0.35);
+      --accent: #10b981;
+      --accent-glow: rgba(16, 185, 129, 0.3);
+      --warning: #f59e0b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, #1e1b4b 0%, #090d16 50%),
+                  radial-gradient(circle at 90% 80%, #0f172a 0%, #090d16 60%);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 6px 16px;
+      background: rgba(99, 102, 241, 0.15);
+      border: 1px solid rgba(99, 102, 241, 0.35);
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #a5b4fc;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .badge-top .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background: #34d399;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #34d399;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    h1 {
+      font-size: 2.3rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.8rem;
+    }
+
+    h1 span {
+      background: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Card styling */
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: var(--card-hover);
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-title .icon {
+      font-size: 1.4rem;
+    }
+
+    /* Port Explainer Banner */
+    .explainer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 700px) {
+      .explainer-grid { grid-template-columns: 1fr; }
+    }
+
+    .explainer-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+
+    .explainer-box h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #cbd5e1;
+    }
+
+    .explainer-box p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .explainer-box code {
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82rem;
+    }
+
+    /* Interactive Port Selector Box */
+    .port-selector-card {
+      background: linear-gradient(135deg, rgba(30, 27, 75, 0.85), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(129, 140, 248, 0.3);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+    }
+
+    .port-input-row {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 1.25rem 0;
+      flex-wrap: wrap;
+    }
+
+    .port-input-wrap {
+      flex: 1;
+      min-width: 200px;
+      position: relative;
+    }
+
+    .port-input-wrap label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 0.4rem;
+    }
+
+    .port-input-wrap input {
+      width: 100%;
+      background: #030712;
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #38bdf8;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 10px 14px;
+      border-radius: 10px;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .port-input-wrap input:focus {
+      border-color: #818cf8;
+      box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+    }
+
+    .presets-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .presets-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .preset-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #e2e8f0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s;
+    }
+
+    .preset-btn:hover {
+      background: rgba(99, 102, 241, 0.2);
+      border-color: rgba(99, 102, 241, 0.4);
+      color: #fff;
+    }
+
+    .preset-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      font-weight: 600;
+      box-shadow: 0 0 12px var(--primary-glow);
+    }
+
+    /* Dynamic Prompts Box */
+    .prompt-card {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 14px;
+      padding: 1.25rem;
+      margin-top: 1.25rem;
+      position: relative;
+    }
+
+    .prompt-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.85rem;
+    }
+
+    .prompt-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #c7d2fe;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .copy-btn {
+      background: linear-gradient(135deg, var(--primary), #8b5cf6);
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      box-shadow: 0 4px 14px var(--primary-glow);
+      transition: all 0.2s;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
+
+    .copy-btn.copied {
+      background: linear-gradient(135deg, #059669, #10b981);
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .prompt-content {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.92rem;
+      background: #030712;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 1rem;
+      color: #e2e8f0;
+      word-break: break-word;
+      user-select: all;
+    }
+
+    .prompt-content .port-tag {
+      color: #38bdf8;
+      font-weight: 700;
+      background: rgba(56, 189, 248, 0.15);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* Terminal Box */
+    .terminal-box {
+      background: #030712;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .terminal-top {
+      background: #111827;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .terminal-code {
+      padding: 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      color: #38bdf8;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      overflow-x: auto;
+    }
+
+    /* How It Works Steps */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .step-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 1.25rem;
+      position: relative;
+    }
+
+    .step-number {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #818cf8;
+      background: rgba(99, 102, 241, 0.12);
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      margin-bottom: 0.85rem;
+    }
+
+    .step-box h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-box p {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    /* Toast Notification */
+    #toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #10b981;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Top Header -->
+    <header>
+      <div class="badge-top">
+        <span class="pulse-dot"></span>
+        Zero Configuration &bull; Free Global HTTPS Tunnel
+      </div>
+      <h1>Localhost <span>Live Tunnel Toolkit</span></h1>
+      <p class="subtitle">
+        Apne local computer ke kisi bhi project (Port 80, 3000, 5173, etc.) ko bina hosting khareede duniya ke kisi bhi mobile ya laptop par live share karein.
+      </p>
+    </header>
+
+    <!-- Port Explainer Guide (Sabko Samajh Aane Ke Liye) -->
+    <div class="card">
+      <div class="section-title">
+        <span class="icon">❓</span>
+        Port Kya Hota Hai Aur Yeh Kaise Pata Karein? (Port Guide)
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.92rem;">
+        Computer me <b>Port</b> ek room number ya gate number jaisa hota hai, jo batata hai ki kaunsa software chal raha hai:
+      </p>
+
+      <div class="explainer-grid">
+        <div class="explainer-box">
+          <h3><span>🌐</span> Port 80 (Default Web / XAMPP)</h3>
+          <p>
+            Jab aap browser me sirf <code>http://localhost/</code> likhte hain bina kisi number ke, toh background me hamesha <b>Port 80</b> hi use hota hai (XAMPP Apache ka default port).
+          </p>
+        </div>
+
+        <div class="explainer-box">
+          <h3><span>⚡</span> Port 3000, 5173, 8000 (Custom Ports)</h3>
+          <p>
+            Agar aapke browser URL me <code>:</code> ke baad koi number hai (e.g. <code>localhost:3000</code> ya <code>localhost:5173</code>), toh wahi number aapka active <b>Port</b> hai!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Port Customizer Box -->
+    <div class="card port-selector-card">
+      <div class="section-title" style="color: #c7d2fe;">
+        <span class="icon">🎛️</span>
+        Apna Port Select Ya Type Karein (Live Prompt Updater)
+      </div>
+      <p style="color: #94a3b8; font-size: 0.88rem;">
+        Neeche apna Port number change karein, saare copyable prompts aur commands automatically update ho jayenge:
+      </p>
+
+      <div class="port-input-row">
+        <div class="port-input-wrap">
+          <label>Target Port Number:</label>
+          <input type="number" id="portInput" value="80" min="1" max="65535" oninput="updatePrompts()">
+        </div>
+      </div>
+
+      <div class="presets-label">Popular Presets (Ek Click Me Select Karein):</div>
+      <div class="presets-row">
+        <button class="preset-btn active" onclick="setPreset(80, this)">🐘 XAMPP / Apache (80)</button>
+        <button class="preset-btn" onclick="setPreset(3000, this)">⚛️ React / Next.js (3000)</button>
+        <button class="preset-btn" onclick="setPreset(5173, this)">⚡ Vite / Vue (5173)</button>
+        <button class="preset-btn" onclick="setPreset(8000, this)">🐍 Python / Django (8000)</button>
+        <button class="preset-btn" onclick="setPreset(8080, this)">📦 Alt XAMPP / Tomcat (8080)</button>
+      </div>
+    </div>
+
+    <!-- Ready-to-Copy Prompts Section -->
+    <div class="card">
+      <div class="section-title">
+        <span class="icon">💬</span>
+        Antigravity / AI Ko Dene Wale Prompts (1-Click Copy)
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.92rem;">
+        Yeh prompt aapke upar select kiye gaye port ke hisaab se live update ho chuke hain:
+      </p>
+
+      <!-- Option 1: Standard Full Prompt -->
+      <div class="prompt-card">
+        <div class="prompt-header">
+          <span class="prompt-label">
+            ⭐ Option 1: Standard Full Prompt (Recommended)
+          </span>
+          <button class="copy-btn" onclick="copyDynamicText('promptFull', this)">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            <span>Copy Prompt</span>
+          </button>
+        </div>
+        <div class="prompt-content" id="promptFullView">
+          Mere localhost server (<span class="port-tag" id="tagPort1">Port 80</span>) ka Cloudflare tunnel start karo aur ek public HTTPS live URL generate karke do, taaki ise koi bhi internet par open kar sake.
+        </div>
+      </div>
+
+      <!-- Option 2: Short Prompt -->
+      <div class="prompt-card">
+        <div class="prompt-header">
+          <span class="prompt-label">
+            ⚡ Option 2: Short & Fast Prompt
+          </span>
+          <button class="copy-btn" onclick="copyDynamicText('promptShort', this)">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+            <span>Copy Prompt</span>
+          </button>
+        </div>
+        <div class="prompt-content" id="promptShortView">
+          Port <span class="port-tag" id="tagPort2">80</span> par chal rahe localhost project ke liye Cloudflare tunnel live URL bana do.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Direct Terminal Command Box -->
+    <div class="card">
+      <div class="section-title">
+        <span class="icon">💻</span>
+        Direct Terminal Command (PowerShell / CMD Me Chalane Ke Liye)
+      </div>
+      <p style="color: var(--text-muted); font-size: 0.92rem;">
+        Agar aapko terminal me direct chalana ho, toh yeh command run karein:
+      </p>
+
+      <div class="terminal-box">
+        <div class="terminal-top">
+          <div class="dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span style="font-size: 0.75rem; color: #64748b; font-family: 'JetBrains Mono', monospace;">PowerShell / Command Prompt</span>
+        </div>
+        <div class="terminal-code">
+          <span id="cmdText">npx -y cloudflared tunnel --url http://localhost:80</span>
+          <button class="copy-btn" style="padding: 5px 12px; font-size: 0.75rem;" onclick="copyDynamicText('cmdOnly', this)">
+            <span>Copy</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- How It Works Steps -->
+    <div class="card">
+      <div class="section-title">
+        <span class="icon">⚡</span>
+        Workflow (Yeh Kaise Kaam Karta Hai?)
+      </div>
+      <div class="steps-grid">
+        <div class="step-box">
+          <div class="step-number">01</div>
+          <h3>Local Server Active</h3>
+          <p>Aapka project laptop/PC par kisi port par chal raha hota hai.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">02</div>
+          <h3>Secure Tunnel</h3>
+          <p>Cloudflare ek encrypted tunnel aapke PC se apne edge servers tak jodta hai.</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">03</div>
+          <h3>Global HTTPS URL</h3>
+          <p>Aapko ek live link milta hai (e.g. <code>https://xxx.trycloudflare.com</code>).</p>
+        </div>
+
+        <div class="step-box">
+          <div class="step-number">04</div>
+          <h3>Anyone Can Open</h3>
+          <p>Koi bhi mobile ya laptop se is link ko open karke aapka live project dekh sakta hai.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+    <span id="toastMsg">Prompt clipboard me copy ho gaya!</span>
+  </div>
+
+  <script>
+    let currentPort = 80;
+
+    function setPreset(port, btn) {
+      document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('portInput').value = port;
+      currentPort = port;
+      updatePrompts();
+    }
+
+    function updatePrompts() {
+      const inputVal = document.getElementById('portInput').value;
+      currentPort = parseInt(inputVal) || 80;
+
+      // Update tags
+      document.getElementById('tagPort1').innerText = `Port ${currentPort}`;
+      document.getElementById('tagPort2').innerText = `${currentPort}`;
+
+      // Update command
+      document.getElementById('cmdText').innerText = `npx -y cloudflared tunnel --url http://localhost:${currentPort}`;
+    }
+
+    function getDynamicString(type) {
+      if (type === 'promptFull') {
+        return `Mere localhost server (Port ${currentPort}) ka Cloudflare tunnel start karo aur ek public HTTPS live URL generate karke do, taaki ise koi bhi internet par open kar sake.`;
+      }
+      if (type === 'promptShort') {
+        return `Port ${currentPort} par chal rahe localhost project ke liye Cloudflare tunnel live URL bana do.`;
+      }
+      if (type === 'cmdOnly') {
+        return `npx -y cloudflared tunnel --url http://localhost:${currentPort}`;
+      }
+      return '';
+    }
+
+    function copyDynamicText(type, btn) {
+      const text = getDynamicString(type);
+
+      navigator.clipboard.writeText(text).then(() => {
+        const originalHtml = btn.innerHTML;
+        btn.classList.add('copied');
+        btn.innerHTML = `
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+          <span>Copied!</span>
+        `;
+
+        const toast = document.getElementById('toast');
+        document.getElementById('toastMsg').innerText = `Port ${currentPort} prompt copied!`;
+        toast.classList.add('show');
+
+        setTimeout(() => {
+          btn.classList.remove('copied');
+          btn.innerHTML = originalHtml;
+          toast.classList.remove('show');
+        }, 2200);
+      }).catch(err => {
+        console.error('Copy failed: ', err);
+      });
+    }
+
+    // Initial setup
+    updatePrompts();
+  </script>
+</body>
+</html>

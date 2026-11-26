@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60">
+  <style>
+    .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; font-size: 14.5px; font-weight: 600; fill: #334155; }
+    .bold-txt { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-weight: 800; }
+  </style>
+
+  <!-- Title -->
+  <text x="0" y="16" class="title">Payment Options</text>
+
+  <!-- Logos Group (y=26 to 54) -->
+  <g transform="translate(0, 26)">
+    
+    <!-- 1. VISA -->
+    <g transform="translate(0, 0)">
+      <path d="M 14.5 4.5 L 9.8 19 L 6.6 19 L 4 7.2 C 3.8 6.5 3.6 6.2 3.1 5.9 C 2.3 5.4 1 5 0 4.8 L 0.2 4 L 5.3 4 C 6 4 6.6 4.5 6.7 5.3 L 8.1 14.2 L 11.4 4.5 L 14.5 4.5 Z" fill="#1434CB"/>
+      <path d="M 0 4.8 C 1.2 5.1 2.3 5.5 3.1 6 C 3.6 6.3 3.8 6.6 4 7.2 L 5.6 15.5 L 2.8 4 L 0 4.8 Z" fill="#F7B600"/>
+      <path d="M 18.2 4.5 L 15.7 19 L 12.8 19 L 15.3 4.5 L 18.2 4.5 Z" fill="#1434CB"/>
+      <path d="M 27.2 9.5 C 27.2 7.2 23.8 7 23.8 5.8 C 23.8 5.4 24.3 4.9 25.3 4.8 C 25.8 4.7 27.2 4.7 28.7 5.4 L 29.3 2.9 C 28.5 2.6 27.4 2.3 26 2.3 C 22.8 2.3 20.6 4 20.6 6.5 C 20.6 8.3 22.2 9.3 23.4 9.9 C 24.7 10.5 25.1 10.9 25.1 11.5 C 25.1 12.4 24 12.8 23 12.8 C 21.4 12.8 20.5 12.4 19.3 11.8 L 18.7 14.4 C 19.7 14.9 21.3 15.3 22.9 15.3 C 26.3 15.3 28.5 13.6 28.5 11.1 C 28.5 9.8 27.8 9.1 27.2 9.5 Z" fill="#1434CB"/>
+      <path d="M 37.4 4.5 L 34.8 19 L 32.1 19 L 30.5 8.8 C 30.3 8.1 30.1 7.6 29.8 7.3 C 29.4 6.8 28.7 6.4 27.8 6.2 L 28 5.4 C 29.3 5.4 31.4 5.2 32.7 4.5 L 35 15.1 L 36.4 4.5 L 37.4 4.5 Z" fill="#1434CB"/>
+      <polygon points="34.2,13.8 38.6,13.8 38.2,11.5 34.5,11.5" fill="#1434CB"/>
+      <path d="M 41.5 4.5 L 39 19 L 36.3 19 L 38.8 4.5 L 41.5 4.5 Z" fill="none"/>
+    </g>
+
+    <!-- 2. MasterCard -->
+    <g transform="translate(56, 0)">
+      <circle cx="10" cy="11.5" r="9.5" fill="#EB001B"/>
+      <circle cx="21" cy="11.5" r="9.5" fill="#F79E1B"/>
+      <path d="M 15.5 4.2 A 9.5 9.5 0 0 1 15.5 18.8 A 9.5 9.5 0 0 1 15.5 4.2 Z" fill="#FF5F00"/>
+      <text x="15.5" y="13.2" font-family="'Helvetica Neue', Arial, sans-serif" font-size="5" font-weight="bold" font-style="italic" fill="#ffffff" text-anchor="middle" letter-spacing="-0.3">MasterCard</text>
+    </g>
+
+    <!-- 3. Paytm -->
+    <g transform="translate(102, 1)">
+      <!-- 'pay' in dark navy -->
+      <text x="0" y="16" font-family="'Arial Black', Impact, 'Segoe UI', sans-serif" font-weight="900" font-size="19" fill="#002970" letter-spacing="-0.8">pay</text>
+      <!-- 'tm' in bright cyan -->
+      <text x="36.5" y="16" font-family="'Arial Black', Impact, 'Segoe UI', sans-serif" font-weight="900" font-size="19" fill="#00BAF2" letter-spacing="-0.8">tm</text>
+    </g>
+
+    <!-- 4. Net Banking Badge -->
+    <g transform="translate(178, 1)">
+      <!-- Outer Border / Box -->
+      <rect x="0" y="1" width="84" height="19" rx="2" fill="#ffffff" stroke="#2196F3" stroke-width="1.2"/>
+      <!-- Right Half Solid Blue Background -->
+      <path d="M 28 1 L 82 1 A 2 2 0 0 1 84 3 L 84 18 A 2 2 0 0 1 82 20 L 28 20 Z" fill="#2196F3"/>
+      <!-- 'Net' in Blue -->
+      <text x="14" y="14.5" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="11.5" fill="#2196F3" text-anchor="middle">Net</text>
+      <!-- 'Banking' in White -->
+      <text x="56" y="14.5" font-family="'Helvetica Neue', Arial, sans-serif" font-weight="bold" font-size="11" fill="#ffffff" text-anchor="middle">Banking</text>
+    </g>
+
+  </g>
+</svg>

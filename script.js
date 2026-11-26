@@ -11,11 +11,20 @@ const handDryersData = [
     displayTitle: "Hand Dryer HD-1800 EA",
     usageLabel: "0-100 usage per day",
     usageTier: "low",
-    name: "Nature Hygiene Hand Dryer HD-1800 EA",
+    name: "Automatic Hand Dryer in ABS Body",
     model: "Model: HD-1800 EA",
     category: "low",
     categories: ["low", "abs", "sensor"],
+    price: "₹2,850",
+    origPrice: "₹3,999",
     image: "images/Hand%20Dryer%20HD-1800%20EA.png",
+    galleryImages: [
+      "images/hd-1800ea-real.jpg",
+      "images/hd-1800ea-washroom.jpg",
+      "images/hd-1800ea-clean-hands.jpg",
+      "images/hd-1800ea-touch-free.jpg",
+      "images/hd-1800ea-confident-you.jpg"
+    ],
     badge: "0-100 usage per day",
     badgeClass: "badge-tag-teal",
     dryingTime: "10 - 12 Seconds",
@@ -41,14 +50,22 @@ const handDryersData = [
   },
   {
     id: "hd-ss-pro",
-    displayTitle: "SS Hand Dryer",
+    displayTitle: "SS Hand Dryer HD-2800 SA",
     usageLabel: "100-500 usage per day",
     usageTier: "medium",
-    name: "Nature Hygiene SS Hand Dryer",
-    model: "Model: HD-SS304",
+    name: "Stainless Steel High-Speed Hand Dryer",
+    model: "Model: HD-2800 SA",
     category: "medium",
     categories: ["medium", "stainless", "highspeed"],
+    price: "₹7,500",
+    origPrice: "₹9,800",
     image: "images/SS%20Hand%20Dryer.png",
+    galleryImages: [
+      "images/SS%20Hand%20Dryer.png",
+      "images/dryer-nextgen.jpg",
+      "images/gallery-2.jpg",
+      "images/about-hand-dryer.jpg"
+    ],
     badge: "100-500 usage per day",
     badgeClass: "badge-tag-blue",
     dryingTime: "8 - 10 Seconds",
@@ -63,7 +80,7 @@ const handDryersData = [
     sensorType: "Smart Microchip Optical Infrared Sensor",
     warranty: "3 Years Comprehensive Warranty",
     shortDesc: "Premium AISI 304 stainless steel high-speed hand dryer engineered for hotels, hospitals, malls, and offices.",
-    fullDesc: "The Nature Hygiene SS Hand Dryer pairs a corrosion-resistant AISI 304 stainless steel housing with high-velocity focused air jets, drying hands rapidly in 8-10 seconds while withstanding heavy commercial washroom traffic.",
+    fullDesc: "The Stainless Steel High-Speed Hand Dryer (HD-2800 SA) pairs a corrosion-resistant AISI 304 stainless steel housing with high-velocity focused air jets, drying hands rapidly in 8-10 seconds while withstanding heavy commercial washroom traffic.",
     features: [
       "Heavy-duty AISI 304 stainless steel resists rust and tampering",
       "High-velocity air curtain dries hands cleanly in 8-10 seconds",
@@ -74,80 +91,101 @@ const handDryersData = [
   },
   {
     id: "hd-ig500",
-    displayTitle: "Industrial Grade",
+    displayTitle: "Industrial Grade HD-IG500",
     usageLabel: "Above 500 usage per day",
     usageTier: "high",
     name: "Industrial Grade — AeroJet Blade",
     model: "Model: HD-IG500",
     category: "high",
     categories: ["high", "jet", "industrial", "stainless"],
-    image: "images/dryer-industrial-jet.jpg",
+    price: "₹8,990",
+    origPrice: "₹11,999",
+    image: "images/Industrial%20Grade%20Hand%20Dryer.png",
+    galleryImages: [
+      "images/Industrial%20Grade%20Hand%20Dryer.png",
+      "images/dryer-industrial-jet.jpg",
+      "images/gallery-4.jpg"
+    ],
     badge: "Above 500 usage per day",
     badgeClass: "badge-tag-orange",
-    dryingTime: "7 - 9 Seconds",
+    dryingTime: "8 - 10 Seconds",
     airSpeed: "105 m/s",
-    power: "1200W Smart Heat",
+    power: "1800W Heavy-Duty Thermal",
     noiseLevel: "68 dB",
-    material: "Heavy-Duty Dark Gunmetal Brushed Titanium Steel",
-    motor: "Brushless DC Continuous-Duty Motor (100,000 RPM)",
-    filtration: "Dual Medical-Grade HEPA H13 Filtration",
-    dimensions: "685 x 300 x 220 mm",
-    drainTank: "800ml Drain Tank with Anti-Overflow Sensor",
-    sensorType: "Dual Infrared Optical Beam",
+    material: "Heavy-Duty Mirror-Polished AISI 304 Stainless Steel / Chrome",
+    motor: "Heavy-Duty Continuous-Duty Industrial Motor",
+    filtration: "Dual Hygiene Air Filtration",
+    dimensions: "280 x 270 x 210 mm",
+    drainTank: "Focused High-Speed Downward Air Stream",
+    sensorType: "Touch-Free Optical Infrared Beam",
     warranty: "5 Years Industrial Warranty",
-    shortDesc: "Heavy-duty vertical hands-in jet blade dryer built for high-traffic airports, malls, factories, and corporate hubs.",
-    fullDesc: "Industrial Grade (HD-IG500) is engineered for relentless 24/7 commercial traffic exceeding 500 uses per day. Its dual high-velocity air blades strip water off hands in 7 seconds while dual HEPA filters purify 99.97% of airborne particles.",
+    shortDesc: "Heavy-duty commercial hand dryer engineered for high-traffic facilities, factories, airports, and corporate hubs exceeding 500 daily uses.",
+    fullDesc: "Industrial Grade (HD-IG500) is built with a heavy-duty, tamper-resistant polished stainless steel / chrome housing designed to endure rigorous 24/7 commercial traffic exceeding 500 uses per day. Features high-velocity touch-free drying and heavy-duty motor reliability.",
     features: [
-      "Touch-free hands-in vertical jet blade sweeps water cleanly",
-      "Integrated 800ml drain reservoir keeps floors completely dry",
-      "Brushless 24/7 continuous-duty motor rated for 500,000+ cycles",
-      "Tamper-resistant dark gunmetal brushed metal chassis"
+      "Vandal-resistant solid stainless steel / chrome housing",
+      "High-velocity focused air stream dries hands cleanly in 8-10 seconds",
+      "Touch-free optical infrared sensor for instantaneous activation",
+      "Heavy-duty continuous-duty motor rated for high-volume commercial traffic"
     ],
     svgType: "jet-dryer"
   },
   {
     id: "hd-bp300",
-    displayTitle: "Balanced Power Drying",
+    displayTitle: "Balanced Power HD-BP300",
     usageLabel: "100-500 usage per day",
     usageTier: "medium",
-    name: "Balanced Power Drying — TurboBlast",
+    name: "Nature Hygiene Balanced Power Hand Dryer",
     model: "Model: HD-BP300",
     category: "medium",
     categories: ["medium", "stainless", "highspeed"],
-    image: "images/dryer-balanced.jpg",
+    price: "₹6,850",
+    origPrice: "₹8,999",
+    image: "images/Balanced%20Power%20Hand%20Dryer.png",
+    galleryImages: [
+      "images/Balanced%20Power%20Hand%20Dryer.png",
+      "images/dryer-balanced.jpg",
+      "images/gallery-2.jpg"
+    ],
     badge: "100-500 usage per day",
     badgeClass: "badge-tag-blue",
     dryingTime: "8 - 10 Seconds",
     airSpeed: "95 m/s",
-    power: "1000W Dual Eco/Warm Mode",
+    power: "1200W High-Speed",
     noiseLevel: "69 dB",
-    material: "Heavy-Gauge Faceted AISI 304 Stainless Steel",
-    motor: "High-RPM Centrifugal Cyclone Motor",
-    filtration: "High-Efficiency Cleanable HEPA Filter",
-    dimensions: "310 x 260 x 182 mm",
-    drainTank: "Wall-Mount Drip Shield Compatible",
+    material: "Curved Mirror-Polished AISI 304 Stainless Steel / Chrome",
+    motor: "High-RPM Centrifugal Commercial Motor",
+    filtration: "High-Efficiency Cleanable Air Filter",
+    dimensions: "280 x 240 x 170 mm",
+    drainTank: "Focused Downward Air Nozzle with Safety Grille",
     sensorType: "Smart Microchip Infrared Sensor",
     warranty: "3 Years Comprehensive Warranty",
-    shortDesc: "Geometric faceted brushed steel high-speed hand dryer balancing rapid 8-second airflow with low energy draw.",
-    fullDesc: "Balanced Power Drying (HD-BP300) is the workhorse choice for hotels, restaurants, hospitals, and mid-to-large offices seeing 100-500 daily users. Features an internal warm/cool air switch to cut summer electricity bills in half.",
+    shortDesc: "Curved polished stainless steel commercial hand dryer balancing rapid 8-10 second drying with energy-efficient operation.",
+    fullDesc: "Balanced Power Drying (HD-BP300) is crafted from high-grade mirror-polished stainless steel / chrome, delivering reliable touchless performance for 100-500 daily uses in commercial offices, hotels, restaurants, and clinics.",
     features: [
-      "Concentrated high-velocity air nozzle strips water in 8-10s",
-      "Faceted brushed AISI 304 stainless steel resists fingerprints",
-      "Switchable 500W unheated eco mode or 1000W heated mode",
-      "Compact architectural footprint fits modern washroom walls"
+      "Mirror-polished stainless steel / chrome casing built for modern washrooms",
+      "High-speed focused downward air stream dries hands cleanly in 8-10 seconds",
+      "Touch-free optical infrared sensor with automatic shut-off",
+      "Energy-efficient commercial motor designed for 100-500 uses per day"
     ],
     svgType: "stainless-dryer"
   },
   {
     id: "hd-sl150",
-    displayTitle: "Ultra-Slim ADA Series",
+    displayTitle: "Ultra-Slim ADA HD-SL150",
     usageLabel: "0-100 usage per day",
     usageTier: "low",
     name: "Ultra-Slim ADA Wall-Mounted",
     model: "Model: HD-SL150",
     category: "abs",
     categories: ["low", "abs", "stainless", "wallmounted"],
-    image: "images/dryer-slim-ada.jpg",
+    price: "₹7,250",
+    origPrice: "₹9,499",
+    image: "images/Ultra-Slim%20ADA%20Hand%20Dryer.png",
+    galleryImages: [
+      "images/Ultra-Slim%20ADA%20Hand%20Dryer.png",
+      "images/dryer-slim-ada.jpg",
+      "images/gallery-6.jpg"
+    ],
     badge: "0-100 usage per day",
     badgeClass: "badge-tag-blue",
     dryingTime: "10 - 12 Seconds",
@@ -173,36 +211,43 @@ const handDryersData = [
   },
   {
     id: "hd-ex880",
-    displayTitle: "Architectural Matte Black",
+    displayTitle: "Dual-Side Jet Dryer Big-Jet-L",
     usageLabel: "100-500 usage per day",
     usageTier: "medium",
-    name: "Executive Matte Black Elite",
-    model: "Model: HD-EX880",
+    name: "Dual-Side High Speed Jet Hand Dryer",
+    model: "Model: Big-Jet-L",
     category: "medium",
-    categories: ["medium", "stainless", "commercial"],
-    image: "images/dryer-matte-black.jpg",
+    categories: ["medium", "jet", "commercial", "abs"],
+    price: "₹16,800",
+    origPrice: "₹21,999",
+    image: "images/Smart%20Jet%20Hand%20Dryer.png",
+    galleryImages: [
+      "images/Smart%20Jet%20Hand%20Dryer.png",
+      "images/dryer-matte-black.jpg",
+      "images/gallery-3.jpg"
+    ],
     badge: "100-500 usage per day",
     badgeClass: "badge-tag-blue",
-    dryingTime: "8 - 10 Seconds",
-    airSpeed: "92 m/s",
-    power: "1050W Dynamic Heat",
-    noiseLevel: "66 dB",
-    material: "Electro-Plated Matte Black 304 Stainless Steel",
-    motor: "Brushless Magnetic Levitation Motor",
-    filtration: "HEPA H13 Filter + UV-C Sterilization LED",
-    dimensions: "315 x 260 x 170 mm",
-    drainTank: "Hidden Airflow Guide Channels",
-    sensorType: "Quad-Beam Smart Proximity Sensor",
-    warranty: "3 Years Warranty",
-    shortDesc: "Luxury matte black architectural hand dryer featuring built-in UV-C sanitization for premium hospitality spaces.",
-    fullDesc: "Designed for 5-star hotels, VIP airport lounges, and modern architectural interiors, the Executive Matte Black Elite (HD-EX880) pairs smudge-proof anodized matte black styling with continuous internal UV-C air sanitization.",
+    dryingTime: "7 Seconds",
+    airSpeed: "100 m/s",
+    power: "1200W High-Speed Thermal",
+    noiseLevel: "68 dB",
+    material: "High-Impact Commercial Antibacterial ABS with HEPA Filter",
+    motor: "High-Speed Brushless Commercial Jet Motor",
+    filtration: "Dual HEPA H13 Filtration + Particle Pre-Filter",
+    dimensions: "650 x 300 x 220 mm",
+    drainTank: "800ml Bottom Water Drain Tank with Anti-Overflow Sensor",
+    sensorType: "Dual Infrared Optical Beam with LED Status Indicator",
+    warranty: "3 Years Comprehensive Warranty",
+    shortDesc: "High-speed vertical dual-blade hands-in jet hand dryer with 7-second rapid drying and dual HEPA filtration.",
+    fullDesc: "The Dual-Side High Speed Jet Hand Dryer (Big-Jet-L) is built for modern commercial spaces. Featuring dual high-velocity air blades, integrated 7-second rapid timer, dual HEPA filtration, and an 800ml bottom drain reservoir to keep washroom floors clean and dry.",
     features: [
-      "Velvet matte black electro-plated 304 steel finish",
-      "Integrated UV-C LED continuously disinfects airflow chamber",
-      "Quad-beam proximity sensor prevents false activations",
-      "Smart dynamic heating modulates wattage automatically"
+      "Ultra-fast 7-second touchless dual-blade hand drying",
+      "Medical-grade HEPA filter purifies intake air before reaching hands",
+      "Integrated bottom drain reservoir prevents floor puddles and slip hazards",
+      "Smart LED indicator strip shows real-time operation and drying countdown"
     ],
-    svgType: "matte-black-dryer"
+    svgType: "jet-dryer"
   }
 ];
 
@@ -456,9 +501,6 @@ function renderProducts(productsToRender) {
         <!-- Soft Protective Vignette -->
         <div class="dryer-card-vignette"></div>
 
-        <!-- Top Centered Outlined Usage Pill -->
-        <div class="usage-pill-badge">${product.usageLabel}</div>
-
         <!-- Bottom Left Title & Usage Subtitle + Hover Quick Actions -->
         <div class="dryer-card-footer-info">
           <div>
@@ -479,71 +521,300 @@ function renderProducts(productsToRender) {
   `).join("");
 }
 
-// 4. Product Modal Setup & Populate
+// 4. Product Modal Setup & Populate (Modern E-Commerce Studio Layout matching reference)
 function openProductModal(productId) {
   const product = handDryersData.find(item => item.id === productId);
   if (!product) return;
 
   const modalTitle = document.getElementById("productModalLabel");
   const modalBody = document.getElementById("productModalBody");
-  const modalEnquireBtn = document.getElementById("modalEnquireBtn");
 
   if (modalTitle) {
-    modalTitle.innerHTML = `<strong>${product.displayTitle}</strong> <span class="badge bg-light text-navy ms-2">${product.model}</span>`;
+    modalTitle.innerHTML = `<span class="fw-bold">Product</span>`;
   }
+
+  // Gallery images list
+  const galleryImgs = product.galleryImages || [product.image];
+  const modelCode = product.model.replace("Model: ", "").trim();
+  const price = product.price || "₹2,850";
+  const origPrice = product.origPrice || "₹3,999";
 
   if (modalBody) {
     modalBody.innerHTML = `
-      <div class="row align-items-center">
-        <div class="col-md-5 text-center mb-4 mb-md-0">
-          <img src="${product.image}" alt="${product.name}" class="modal-studio-img">
-          <div class="mt-3">
-            <span class="badge ${product.badgeClass} px-3 py-2 fs-6 rounded-pill">${product.usageLabel}</span>
-            <div class="text-muted small mt-2"><i class="bi bi-shield-check text-success me-1"></i> ${product.warranty}</div>
-          </div>
+      <!-- 1. Breadcrumb Header Section -->
+      <div class="px-4 py-3 bg-light border-bottom">
+        <div class="product-breadcrumb">
+          <a href="#home" data-bs-dismiss="modal">Home</a>
+          <span class="breadcrumb-sep">&gt;&gt;</span>
+          <span class="breadcrumb-current">${product.name} (${product.material ? product.material.split(" ")[0] : ""})</span>
         </div>
-        <div class="col-md-7">
-          <h5 class="text-navy mb-2">Product Overview</h5>
-          <p class="text-muted">${product.fullDesc}</p>
-          
-          <h6 class="text-navy mt-4 mb-2">Key Engineering Features</h6>
-          <ul class="list-unstyled mb-4">
-            ${product.features.map(f => `<li class="d-flex align-items-center gap-2 mb-2"><i class="bi bi-check-circle-fill text-teal"></i> <span class="small">${f}</span></li>`).join("")}
-          </ul>
+      </div>
 
-          <h6 class="text-navy mb-2">Technical Specifications</h6>
-          <div class="table-responsive">
-            <table class="spec-table">
-              <tbody>
-                <tr><th>Drying Time</th><td>${product.dryingTime}</td></tr>
-                <tr><th>Air Velocity</th><td>${product.airSpeed}</td></tr>
-                <tr><th>Power Consumption</th><td>${product.power}</td></tr>
-                <tr><th>Noise Level</th><td>${product.noiseLevel}</td></tr>
-                <tr><th>Body Material</th><td>${product.material}</td></tr>
-                <tr><th>Motor Mechanism</th><td>${product.motor}</td></tr>
-                <tr><th>Air Filtration</th><td>${product.filtration}</td></tr>
-                <tr><th>Sensor Technology</th><td>${product.sensorType}</td></tr>
-                <tr><th>Dimensions (H x W x D)</th><td>${product.dimensions}</td></tr>
-                <tr><th>Drain / Drip Control</th><td>${product.drainTank}</td></tr>
-              </tbody>
-            </table>
+      <!-- 2. Main Two-Column Product Showcase Section -->
+      <div class="p-4 p-lg-5 bg-white">
+        <div class="row g-4 align-items-start">
+          
+          <!-- Left Column: Product Gallery -->
+          <div class="col-lg-5 col-md-6">
+            <div class="main-image-card" id="modalMainImgCard" style="min-height: 380px; max-height: 420px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; display: flex; align-items: center; justify-content: center; position: relative; padding: 20px;" title="Hover to zoom, click to view fullscreen">
+              <span class="gallery-badge"><i class="bi bi-tag-fill"></i> ${product.usageLabel}</span>
+              <button type="button" class="gallery-fullscreen-btn" onclick="openProductLightbox(document.getElementById('modalMainProductImg').src)" title="View Fullscreen"><i class="bi bi-arrows-fullscreen"></i></button>
+              <img id="modalMainProductImg" src="${galleryImgs[0]}" alt="${product.name}" style="max-height: 340px; max-width: 100%; object-fit: contain;">
+              <div class="zoom-indicator-badge" id="modalZoomBadge"><i class="bi bi-search"></i> Hover to zoom</div>
+            </div>
+
+            <!-- Multiple Thumbnail Images below Main Image -->
+            <div class="thumbnail-strip mt-3" id="modalThumbStrip">
+              ${galleryImgs.map((imgUrl, idx) => `
+                <div class="thumb-item ${idx === 0 ? "active" : ""}" onclick="switchModalGalleryImg('${imgUrl}', this)" title="View ${idx + 1}">
+                  <img src="${imgUrl}" alt="${product.name} view ${idx + 1}">
+                </div>
+              `).join("")}
+            </div>
+          </div>
+
+          <!-- Right Column: Product Information -->
+          <div class="col-lg-7 col-md-6">
+            <div class="product-info-wrap">
+              <!-- Product Title & Model -->
+              <h3 class="fw-bold text-navy mb-1" style="font-size: 1.65rem; line-height: 1.3;">${product.name}</h3>
+              <p class="text-muted small fw-semibold mb-2">${product.model}</p>
+              
+              <!-- Price & GST Notice (Exact format as reference) -->
+              <div class="my-3">
+                <div class="d-flex align-items-baseline gap-2 mb-1">
+                  <span class="fs-2 fw-bolder text-dark">${price}</span>
+                  <del class="text-muted small">${origPrice}</del>
+                </div>
+                <div class="gst-notice-badge">
+                  <i class="bi bi-check2-circle"></i>
+                  <span>18% GST will be applicable on the price</span>
+                </div>
+              </div>
+
+              <!-- Short Description -->
+              <p class="text-muted mb-4" style="font-size: 0.96rem; line-height: 1.6;">
+                ${product.shortDesc}
+              </p>
+
+              <!-- Trust & Delivery Highlights -->
+              <div class="trust-badges-strip mt-2">
+                <div class="trust-badge-item">
+                  <i class="bi bi-shield-check"></i>
+                  <div>
+                    <strong>Warranty : 12 Months</strong>
+                    <span>Comprehensive Coverage</span>
+                  </div>
+                </div>
+                <div class="trust-badge-item">
+                  <i class="bi bi-truck"></i>
+                  <div>
+                    <strong>Estimated Delivery : 2-4 Days</strong>
+                    <span>Pan-India Fast Dispatch</span>
+                  </div>
+                </div>
+                <div class="trust-badge-item">
+                  <i class="bi bi-arrow-repeat"></i>
+                  <div>
+                    <strong>10 Days Return/Replacement/Refund assurance</strong>
+                    <span>100% Buyer Protection</span>
+                  </div>
+                </div>
+                <div class="trust-badge-item">
+                  <i class="bi bi-patch-check"></i>
+                  <div>
+                    <strong>100% Original Product</strong>
+                    <span>Direct Brand Genuine</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Payment Options -->
+              <div class="payment-options-strip">
+                <span class="payment-options-label">Payment Options</span>
+                <div class="payment-options-logos">
+                  <img src="images/payment-options-logos@2x.png" alt="Payment Options: VISA, MasterCard, Paytm, Net Banking" height="25">
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 3. Specifications & Features Tabs Section (With Orange Accent Line) -->
+      <div class="px-4 px-lg-5 pb-5 bg-white border-top pt-4">
+        <!-- Tabs Navigation with Orange Underline -->
+        <div class="custom-product-tabs" role="tablist">
+          <button class="tab-nav-btn active" id="modalTabSpecsBtn" type="button" onclick="switchModalTab('specs')">
+            Specifications
+          </button>
+          <button class="tab-nav-btn" id="modalTabFeaturesBtn" type="button" onclick="switchModalTab('features')">
+            Features
+          </button>
+        </div>
+
+        <!-- Tab 1: Specifications (Active) -->
+        <div id="modalTabSpecsPane">
+          <h5 class="tab-pane-heading">Model No: ${modelCode}</h5>
+          <div class="spec-table-card">
+            <div class="table-responsive">
+              <table class="table-custom-specs">
+                <thead>
+                  <tr>
+                    <th>Specification</th>
+                    <th>Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="spec-name">Model:</td><td class="spec-val">${modelCode}</td></tr>
+                  <tr><td class="spec-name">Power Supply:</td><td class="spec-val">${product.power}</td></tr>
+                  <tr><td class="spec-name">Drying Time:</td><td class="spec-val">${product.dryingTime}</td></tr>
+                  <tr><td class="spec-name">Air Velocity:</td><td class="spec-val">${product.airSpeed}</td></tr>
+                  <tr><td class="spec-name">Noise Level:</td><td class="spec-val">${product.noiseLevel}</td></tr>
+                  <tr><td class="spec-name">Body Material:</td><td class="spec-val">${product.material}</td></tr>
+                  <tr><td class="spec-name">Motor Mechanism:</td><td class="spec-val">${product.motor}</td></tr>
+                  <tr><td class="spec-name">Air Filtration:</td><td class="spec-val">${product.filtration}</td></tr>
+                  <tr><td class="spec-name">Sensor Technology:</td><td class="spec-val">${product.sensorType}</td></tr>
+                  <tr><td class="spec-name">Dimensions (H x W x D):</td><td class="spec-val">${product.dimensions}</td></tr>
+                  <tr><td class="spec-name">Drain / Drip Control:</td><td class="spec-val">${product.drainTank}</td></tr>
+                  <tr><td class="spec-name">Warranty:</td><td class="spec-val">${product.warranty}</td></tr>
+                  <tr><td class="spec-name">Installation Type:</td><td class="spec-val">Wall-Mounted with Concealed Heavy-Duty Backplate</td></tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
+
+        <!-- Tab 2: Features -->
+        <div id="modalTabFeaturesPane" class="d-none">
+          <h5 class="tab-pane-heading">Key Engineering Features</h5>
+          <div class="features-grid">
+            ${product.features.map(f => `
+              <div class="feature-box-card">
+                <div class="feature-icon-circle"><i class="bi bi-check2-circle"></i></div>
+                <h5>${f}</h5>
+                <p>Designed and built for continuous commercial operation, maximum user hygiene, and reliable multi-year washroom performance.</p>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+
       </div>
     `;
   }
 
-  if (modalEnquireBtn) {
-    modalEnquireBtn.onclick = function() {
-      const modalEl = document.getElementById("productModal");
-      const modalInstance = bootstrap.Modal.getInstance(modalEl);
-      if (modalInstance) modalInstance.hide();
-      enquireProduct(product.id);
-    };
-  }
-
   const modal = new bootstrap.Modal(document.getElementById("productModal"));
   modal.show();
+  setupModalImageZoom();
+}
+
+// Switch main image on thumbnail click inside modal (supports all gallery images)
+function switchModalGalleryImg(imgSrc, element) {
+  const mainImg = document.getElementById("modalMainProductImg");
+  const card = document.getElementById("modalMainImgCard");
+  const badge = document.getElementById("modalZoomBadge");
+  if (mainImg) {
+    mainImg.style.transform = "scale(1)";
+    mainImg.style.transformOrigin = "center center";
+    if (card) card.classList.remove("is-zoomed");
+    if (badge) {
+      badge.innerHTML = '<i class="bi bi-search"></i> Hover to zoom';
+      badge.classList.remove("active");
+    }
+    mainImg.style.opacity = "0.4";
+    setTimeout(() => {
+      mainImg.src = imgSrc;
+      mainImg.style.opacity = "1";
+    }, 120);
+  }
+  const thumbs = document.querySelectorAll("#modalThumbStrip .thumb-item");
+  thumbs.forEach(t => t.classList.remove("active"));
+  if (element) element.classList.add("active");
+}
+
+// Setup Interactive Magnifier Zoom on Product Modal Main Image (works for all images)
+function setupModalImageZoom() {
+  const card = document.getElementById("modalMainImgCard");
+  const img = document.getElementById("modalMainProductImg");
+  const badge = document.getElementById("modalZoomBadge");
+  if (!card || !img) return;
+
+  card.onmousemove = function(e) {
+    const rect = card.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    img.style.transformOrigin = `${x}% ${y}%`;
+    img.style.transform = "scale(2.2)";
+    card.classList.add("is-zoomed");
+    if (badge) {
+      badge.innerHTML = '<i class="bi bi-arrows-move"></i> Move to inspect';
+      badge.classList.add("active");
+    }
+  };
+
+  card.onmouseleave = function() {
+    img.style.transform = "scale(1)";
+    img.style.transformOrigin = "center center";
+    card.classList.remove("is-zoomed");
+    if (badge) {
+      badge.innerHTML = '<i class="bi bi-search"></i> Hover to zoom';
+      badge.classList.remove("active");
+    }
+  };
+
+  card.onclick = function(e) {
+    if (e.target.closest(".gallery-fullscreen-btn") || e.target.closest(".gallery-badge")) return;
+    openProductLightbox(img.src);
+  };
+}
+
+// Open Fullscreen Lightbox for any viewed image
+function openProductLightbox(src) {
+  const lightbox = document.getElementById("productImgLightbox");
+  if (!lightbox) return;
+  const lbImg = document.getElementById("productImgLightboxSrc");
+  if (lbImg) lbImg.src = src;
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+// Close Fullscreen Lightbox
+function closeProductLightbox() {
+  const lightbox = document.getElementById("productImgLightbox");
+  if (lightbox) {
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+}
+
+// Switch between Specifications and Features tabs inside modal
+function switchModalTab(tabName) {
+  const specsBtn = document.getElementById("modalTabSpecsBtn");
+  const featsBtn = document.getElementById("modalTabFeaturesBtn");
+  const specsPane = document.getElementById("modalTabSpecsPane");
+  const featsPane = document.getElementById("modalTabFeaturesPane");
+
+  if (tabName === "specs") {
+    if (specsBtn) specsBtn.classList.add("active");
+    if (featsBtn) featsBtn.classList.remove("active");
+    if (specsPane) specsPane.classList.remove("d-none");
+    if (featsPane) featsPane.classList.add("d-none");
+  } else {
+    if (featsBtn) featsBtn.classList.add("active");
+    if (specsBtn) specsBtn.classList.remove("active");
+    if (featsPane) featsPane.classList.remove("d-none");
+    if (specsPane) specsPane.classList.add("d-none");
+  }
+}
+
+// Close modal and scroll to enquiry form with pre-filled product
+function closeModalAndEnquire(productId) {
+  const modalEl = document.getElementById("productModal");
+  const modalInstance = bootstrap.Modal.getInstance(modalEl);
+  if (modalInstance) modalInstance.hide();
+  enquireProduct(productId);
 }
 
 // 5. Enquire Action: Auto-fills Contact Form & Scrolls
@@ -587,24 +858,32 @@ function resetFilters() {
   renderProducts(handDryersData);
 }
 
-// 7. Interactive ROI Cost Comparison Calculator (Paper Towels vs Smart Hand Dryers)
+// 7. Interactive ROI Cost Comparison Calculator (Paper Towels vs Smart Hand Dryers in Indian INR)
 function calculateSavings() {
-  const dailyUsers = parseInt(document.getElementById("calcUsers").value) || 250;
-  const daysPerYear = parseInt(document.getElementById("calcDays").value) || 300;
-  
-  // Paper towels calculation:
-  // Avg 2.5 paper towels per hand wash @ $0.015 per towel
-  const towelsPerYear = dailyUsers * 2.5 * daysPerYear;
-  const paperTowelCost = towelsPerYear * 0.015;
+  const calcUsersEl = document.getElementById("calcUsers");
+  const calcDaysEl = document.getElementById("calcDays");
+  if (!calcUsersEl || !calcDaysEl) return;
 
-  // Hand dryer calculation:
-  // Smart Hand Dryer: 10 seconds @ 1000W = 0.0028 kWh per dry @ $0.18 per kWh
-  const dryerElectricityCost = dailyUsers * daysPerYear * 0.0028 * 0.18;
+  const dailyUsers = parseInt(calcUsersEl.value) || 250;
+  const daysPerYear = parseInt(calcDaysEl.value) || 300;
+  
+  // Paper towels calculation (INR):
+  // Avg 2.5 paper towels per hand wash @ ₹1.25 per towel in India
+  const towelsPerYear = dailyUsers * 2.5 * daysPerYear;
+  const paperTowelCost = towelsPerYear * 1.25;
+
+  // Hand dryer calculation (INR):
+  // Commercial electric rate in India ~ ₹9.00 per kWh
+  // Smart Hand Dryer: 10 seconds @ 1000W = 0.0028 kWh per dry @ ₹9.00 per kWh
+  const dryerElectricityCost = dailyUsers * daysPerYear * 0.0028 * 9.0;
 
   // Annual Net Savings
   const annualSavings = Math.max(0, paperTowelCost - dryerElectricityCost);
-  const savingsPercent = Math.round(((paperTowelCost - dryerElectricityCost) / paperTowelCost) * 100) || 92;
+  const savingsPercent = Math.round(((paperTowelCost - dryerElectricityCost) / paperTowelCost) * 100) || 99;
   const treesSaved = (towelsPerYear / 8000).toFixed(1); // 1 tree ~ 8,000 paper towels
+
+  // Indian Rupee formatting (e.g. ₹2,32,485)
+  const formatINR = (val) => "₹" + Math.round(val).toLocaleString('en-IN');
 
   // Update DOM
   const savingsDisplay = document.getElementById("calcSavingsDisplay");
@@ -613,49 +892,49 @@ function calculateSavings() {
   const paperCostDisplay = document.getElementById("calcPaperCostDisplay");
   const dryerCostDisplay = document.getElementById("calcDryerCostDisplay");
 
-  if (savingsDisplay) savingsDisplay.textContent = "$" + Math.round(annualSavings).toLocaleString();
+  if (savingsDisplay) savingsDisplay.textContent = formatINR(annualSavings);
   if (percentDisplay) percentDisplay.textContent = savingsPercent + "%";
   if (treesDisplay) treesDisplay.textContent = treesSaved + " Trees";
-  if (paperCostDisplay) paperCostDisplay.textContent = "$" + Math.round(paperTowelCost).toLocaleString() + "/yr";
-  if (dryerCostDisplay) dryerCostDisplay.textContent = "$" + Math.round(dryerElectricityCost).toLocaleString() + "/yr";
+  if (paperCostDisplay) paperCostDisplay.textContent = formatINR(paperTowelCost) + "/yr";
+  if (dryerCostDisplay) dryerCostDisplay.textContent = formatINR(dryerElectricityCost) + "/yr";
 }
 
 // 8. Gallery Lightbox Modal Viewer
 const galleryItems = [
   {
-    title: "Dual-Blade AeroJet in Corporate Tech Park",
+    title: "Automatic Hand Dryer in Corporate Tech Park",
     category: "Corporate",
-    src: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80",
-    desc: "Seamless hands-in installation eliminating paper towel clutter and damp floors in a Fortune 500 tech office washroom."
+    src: "images/gallery-1.jpg",
+    desc: "Touchless automatic hand dryer installation delivering rapid, hygienic, and eco-friendly drying in a corporate washroom."
   },
   {
-    title: "TurboBlast Stainless Steel in Luxury Hotel",
+    title: "Stainless Steel Hand Dryer in Luxury Hotel",
     category: "Hospitality",
-    src: "https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1200&q=80",
-    desc: "Brushed AISI 304 finish blending harmoniously with marble vanities and brass tapware."
+    src: "images/gallery-2.jpg",
+    desc: "Polished stainless steel finish blending harmoniously with modern marble tiles and commercial restroom vanities."
   },
   {
     title: "Executive Matte Black Series in VIP Airport Lounge",
     category: "Airports",
-    src: "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1200&q=80",
+    src: "images/gallery-3.jpg",
     desc: "Architectural matte black edition with UV-C air sterilization installed across international terminal restrooms."
   },
   {
     title: "TitanForce Heavy Duty in International Transit Hub",
     category: "Transit",
-    src: "https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=1200&q=80",
+    src: "images/gallery-4.jpg",
     desc: "Robust vandal-proof hand dryer setup capable of servicing over 15,000 travelers per day."
   },
   {
     title: "PureTouch Contactless Dryer in Medical Facility",
     category: "Healthcare",
-    src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80",
+    src: "images/gallery-5.jpg",
     desc: "Zero-touch HEPA-purified hand drying adhering to hospital contagion control guidelines."
   },
   {
     title: "SlimLine ADA Low-Profile Dryer in University Complex",
     category: "Education",
-    src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80",
+    src: "images/gallery-6.jpg",
     desc: "Ultra-compact wall mount adhering to ADA barrier-free corridor regulations."
   }
 ];
@@ -764,16 +1043,20 @@ document.addEventListener("DOMContentLoaded", function() {
   const backToTopBtn = document.getElementById("backToTopBtn");
 
   window.addEventListener("scroll", function() {
-    if (window.scrollY > 50) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
     }
 
-    if (window.scrollY > 400) {
-      backToTopBtn.classList.add("show");
-    } else {
-      backToTopBtn.classList.remove("show");
+    if (backToTopBtn) {
+      if (window.scrollY > 400) {
+        backToTopBtn.classList.add("show");
+      } else {
+        backToTopBtn.classList.remove("show");
+      }
     }
   });
 
@@ -787,7 +1070,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Floating WhatsApp Dynamic Link (with prefilled message)
   const waButton = document.getElementById("floatingWhatsApp");
   if (waButton) {
-    const phoneNumber = "919205920583"; // Commercial sales helpline
+    const phoneNumber = "918130817304"; // Commercial sales helpline
     const defaultMsg = encodeURIComponent("Hello! I am inquiring about Smart Automatic Hand Dryers for our commercial facility. Please share product catalogs and pricing.");
     waButton.href = `https://wa.me/${phoneNumber}?text=${defaultMsg}`;
   }
@@ -867,5 +1150,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   }
+
+  // Close product image lightbox on Escape key
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      closeProductLightbox();
+    }
+  });
 });
 
