@@ -739,7 +739,7 @@ function setupModalImageZoom() {
   const badge = document.getElementById("modalZoomBadge");
   if (!card || !img) return;
 
-  card.onmousemove = function(e) {
+  card.onmousemove = function (e) {
     const rect = card.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -752,7 +752,7 @@ function setupModalImageZoom() {
     }
   };
 
-  card.onmouseleave = function() {
+  card.onmouseleave = function () {
     img.style.transform = "scale(1)";
     img.style.transformOrigin = "center center";
     card.classList.remove("is-zoomed");
@@ -762,7 +762,7 @@ function setupModalImageZoom() {
     }
   };
 
-  card.onclick = function(e) {
+  card.onclick = function (e) {
     if (e.target.closest(".gallery-fullscreen-btn") || e.target.closest(".gallery-badge")) return;
     openProductLightbox(img.src);
   };
@@ -864,7 +864,7 @@ function calculateSavings() {
 
   const dailyUsers = parseInt(calcUsersEl.value) || 250;
   const daysPerYear = parseInt(calcDaysEl.value) || 300;
-  
+
   // Paper towels calculation (INR):
   // Avg 2.5 paper towels per hand wash @ ₹1.25 per towel in India
   const towelsPerYear = dailyUsers * 2.5 * daysPerYear;
@@ -962,7 +962,7 @@ function openGalleryModal(index) {
 }
 
 // 9. Document Ready Initialization with jQuery / Vanilla JS
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Populate Product Select Dropdown in Enquiry Form
   const enquirySelect = document.getElementById("enquiryProduct");
   if (enquirySelect) {
@@ -979,7 +979,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Category Filtering
   document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.addEventListener("click", function() {
+    btn.addEventListener("click", function () {
       document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
       this.classList.add("active");
 
@@ -993,7 +993,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Search Input Handler
   const searchInput = document.getElementById("productSearchInput");
   if (searchInput) {
-    searchInput.addEventListener("input", function() {
+    searchInput.addEventListener("input", function () {
       const activeFilterBtn = document.querySelector(".filter-btn.active");
       const filterValue = activeFilterBtn ? activeFilterBtn.getAttribute("data-filter") : "all";
       filterAndRender(filterValue, this.value.toLowerCase().trim());
@@ -1023,13 +1023,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const userSlider = document.getElementById("calcUsers");
   const daysSlider = document.getElementById("calcDays");
   if (userSlider) {
-    userSlider.addEventListener("input", function() {
+    userSlider.addEventListener("input", function () {
       document.getElementById("calcUsersVal").textContent = this.value + " People";
       calculateSavings();
     });
   }
   if (daysSlider) {
-    daysSlider.addEventListener("input", function() {
+    daysSlider.addEventListener("input", function () {
       document.getElementById("calcDaysVal").textContent = this.value + " Days";
       calculateSavings();
     });
@@ -1040,7 +1040,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const navbar = document.querySelector(".main-navbar");
   const backToTopBtn = document.getElementById("backToTopBtn");
 
-  window.addEventListener("scroll", function() {
+  window.addEventListener("scroll", function () {
     if (navbar) {
       if (window.scrollY > 50) {
         navbar.classList.add("scrolled");
@@ -1060,7 +1060,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Back to Top Button Click
   if (backToTopBtn) {
-    backToTopBtn.addEventListener("click", function() {
+    backToTopBtn.addEventListener("click", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
@@ -1076,7 +1076,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // Enquiry Form Validation and Simulated Submission (Using jQuery/Vanilla)
   const enquiryForm = document.getElementById("enquiryForm");
   if (enquiryForm) {
-    enquiryForm.addEventListener("submit", function(e) {
+    enquiryForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
       let isValid = true;
@@ -1150,7 +1150,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Close product image lightbox on Escape key
-  document.addEventListener("keydown", function(e) {
+  document.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
       closeProductLightbox();
     }
