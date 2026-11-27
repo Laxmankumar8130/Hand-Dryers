@@ -678,7 +678,6 @@ function openProductModal(productId) {
                   <tr><td class="spec-name">Sensor Technology:</td><td class="spec-val">${product.sensorType}</td></tr>
                   <tr><td class="spec-name">Dimensions (H x W x D):</td><td class="spec-val">${product.dimensions}</td></tr>
                   <tr><td class="spec-name">Drain / Drip Control:</td><td class="spec-val">${product.drainTank}</td></tr>
-                  <tr><td class="spec-name">Warranty:</td><td class="spec-val">${product.warranty}</td></tr>
                   <tr><td class="spec-name">Installation Type:</td><td class="spec-val">Wall-Mounted with Concealed Heavy-Duty Backplate</td></tr>
                 </tbody>
               </table>
