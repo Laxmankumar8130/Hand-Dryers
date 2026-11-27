@@ -668,7 +668,6 @@ function openProductModal(productId) {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr><td class="spec-name">Model:</td><td class="spec-val">${modelCode}</td></tr>
                   <tr><td class="spec-name">Power Supply:</td><td class="spec-val">${product.power}</td></tr>
                   <tr><td class="spec-name">Drying Time:</td><td class="spec-val">${product.dryingTime}</td></tr>
                   <tr><td class="spec-name">Air Velocity:</td><td class="spec-val">${product.airSpeed}</td></tr>
